@@ -1,5 +1,5 @@
 ## A function to create a list with 4 methods to
-## set/get value and inverse value from matrix
+## set/get value and inverse values from matrix
 
 makeCacheMatrix <- function(x = matrix()) {
 
@@ -22,13 +22,15 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## This function returns the inverse of the matrix
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x = matrix(), ...) {
 
         inve <- x$getinverse()
+        
         #Data exist in cache
         if(!is.null(inve)) {
                 return(inve)
         }
+        
         data <- x$get()
         inve <- solve(data)
         x$setinverse(inve)
